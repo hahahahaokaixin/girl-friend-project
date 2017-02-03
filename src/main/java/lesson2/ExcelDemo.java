@@ -1,8 +1,5 @@
 package lesson2;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -63,37 +60,5 @@ public class ExcelDemo {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * 将InputStream转换成String
-     *
-     * @param in InputStream
-     * @return String
-     * @throws Exception
-     */
-    public static String InputStreamTOString(InputStream in) throws Exception {
-
-        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
-        byte[] data = new byte[1024];
-        int count = -1;
-        while ((count = in.read(data, 0, 1024)) != -1)
-            outStream.write(data, 0, count);
-
-        data = null;
-        return new String(outStream.toByteArray(), "ISO-8859-1");
-    }
-
-    /**
-     * 将String转换成InputStream
-     *
-     * @param in
-     * @return
-     * @throws Exception
-     */
-    public static InputStream StringTOInputStream(String in) throws Exception {
-
-        ByteArrayInputStream is = new ByteArrayInputStream(in.getBytes("ISO-8859-1"));
-        return is;
     }
 }
