@@ -13,6 +13,25 @@ public class exercise3 {
         int a = 26;
         aaa(a);
 
+        System.out.println();
+
+        int array[] = {1, 2, 3, 4};
+        bbb(array);
+        int array2[] = ccc(array);
+        bbb(array2);
+
+        System.out.println();
+
+        int b[] = {2, 3, 7, 8};
+        int c[] = ddd(b);
+        int d[] = ggg(c);
+        bbb(d);
+
+        System.out.println();
+
+        int e[] = {2, 3, 7, 8};
+        bbb(ggg(ddd(e)));
+
     }
 
     public static void aaa(int n) {
@@ -30,6 +49,7 @@ public class exercise3 {
             System.out.print(x);
         }
     }
+
     public static void bbb(int a[]) {
         for (int i = 0; i < a.length; i++) {
             System.out.print(a[i]);
@@ -37,26 +57,34 @@ public class exercise3 {
     }
 
 
-    public static void ccc(int a[]) {
-        int a[] = bbb();
+    public static int[] ccc(int a[]) {
+        //int a[] = bbb();
         int b[] = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             b[i] = a[i] * a[i];
         }
-        System.out.print(b);
+        //System.out.print(b);
+        return b;
     }
 
-    public static void ddd(int a) {
-        int b, c, d, e;
-        int bb, cc, dd, ee;
-        bb = b + 5;
-        cc = c + 5;
-        dd = d + 5;
-        ee = e + 5;
-        int f = (bb + cc + dd + ee) % 10;
-        a = f;
+    public static int[] ddd(int a[]) {
+        int b[] = new int[a.length];
+        for (int i = 0; i < a.length; i++) {
+            b[i] = (a[i] + 5) % 10;
+        }
+        return b;
+    }
 
+    public static int[] ggg(int a[]) {
+        int temp = a[0];
+        a[0] = a[3];
+        a[3] = temp;
 
+        temp = a[1];
+        a[1] = a[2];
+        a[2] = temp;
+
+        return a;
     }
 
 
