@@ -10,7 +10,7 @@ package cute;
  */
 public class exercise3 {
     public static void main(String args[]) {
-        int a = 26;
+        int a = 6;
         aaa(a);
 
         System.out.println();
@@ -36,15 +36,15 @@ public class exercise3 {
 
     public static void aaa(int n) {
         if (n % 2 == 0) {
-            double y = 1 / 2 * 1;
+            double y = 1 * 1.0 / 2 * 1;
             for (int a = 2; a < n / 2; a = a + 2) {
-                y = y + 1 / 2 * a;
+                y = y + 1 * 1.0 / 2 * a;
             }
             System.out.print(y);
         } else {
             double x = 1 / 1 * 1;
             for (int j = 1; j < (n + 1) / 2; j = j + 2) {
-                x = x + 1 / j * 1;
+                x = x + 1 * 1.0 / j * 1;
             }
             System.out.print(x);
         }
@@ -58,11 +58,12 @@ public class exercise3 {
 
 
     public static int[] ccc(int a[]) {
-        //int a[] = bbb();
+
         int b[] = new int[a.length];
         for (int i = 0; i < a.length; i++) {
             b[i] = a[i] * a[i];
         }
+
         //System.out.print(b);
         return b;
     }
@@ -84,6 +85,17 @@ public class exercise3 {
         a[1] = a[2];
         a[2] = temp;
 
+       return a;
+    }
+
+
+    public static  int[] ee(int a[]) {
+        int temp=a[0];
+        a[0]=a[3];
+        a[3]=temp;
+        temp=a[1];
+        a[1]=a[2];
+        a[2]=temp;
         return a;
     }
 
